@@ -262,20 +262,26 @@ body[data-page="home"] .dashboard{position:relative!important;top:auto!important
    This prevents the old hero overlap / stacked cards caused by legacy negative margins. */
 body[data-page="calendar"] header,
 body[data-page="tasks"] header,
-body[data-page="favorites"] header{
+body[data-page="favorites"] header,
+body[data-page="dresscode"] header,
+body[data-page="timeline"] header{
   padding:16px 20px 18px !important;
   min-height:0 !important;
   overflow:visible !important;
 }
 body[data-page="calendar"] .header-inner,
 body[data-page="tasks"] .header-inner,
-body[data-page="favorites"] .header-inner{
+body[data-page="favorites"] .header-inner,
+body[data-page="dresscode"] .header-inner,
+body[data-page="timeline"] .header-inner{
   min-height:54px !important;
   padding:0 !important;
 }
 body[data-page="calendar"] .container,
 body[data-page="tasks"] .container,
-body[data-page="favorites"] .container{
+body[data-page="favorites"] .container,
+body[data-page="dresscode"] .container,
+body[data-page="timeline"] .container{
   width:min(1050px,92%) !important;
   margin:24px auto 110px !important;
   position:relative !important;
@@ -283,13 +289,17 @@ body[data-page="favorites"] .container{
 }
 body[data-page="calendar"] .page-hero,
 body[data-page="tasks"] .page-hero,
-body[data-page="favorites"] .page-hero{
+body[data-page="favorites"] .page-hero,
+body[data-page="dresscode"] .page-hero,
+body[data-page="timeline"] .page-hero{
   margin:0 !important;
   padding:0 2px 20px !important;
 }
 body[data-page="calendar"] .calendar-panel,
 body[data-page="tasks"] #content,
-body[data-page="favorites"] #content{
+body[data-page="favorites"] #content,
+body[data-page="dresscode"] #dressContent,
+body[data-page="timeline"] .timeline-list{
   position:relative !important;
   z-index:1 !important;
 }
@@ -449,7 +459,9 @@ body[data-page="home"] .container {
 }
 body[data-page="calendar"] .container,
 body[data-page="tasks"] .container,
-body[data-page="favorites"] .container {
+body[data-page="favorites"] .container,
+body[data-page="dresscode"] .container,
+body[data-page="timeline"] .container {
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -1032,3 +1044,182 @@ body.dark .name-dialog input{--input-bg:#242025}
 /* Channel WhatsApp */
 .whatsapp-channel-icon{font-size:20px!important;color:#25D366!important;background:rgba(37,211,102,.12)!important;}
 .whatsapp-channel-card:hover .whatsapp-channel-icon{background:rgba(37,211,102,.18)!important;}
+
+/* PPPK information pages */
+.info-tabs{display:flex;gap:10px;margin:0 0 18px}.info-tabs .tab{flex:1}.dress-card,.timeline-card{background:var(--card);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);padding:22px}.dress-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:18px}.dress-head h2{font:800 19px "Plus Jakarta Sans";margin-top:5px}.dress-badge{font-size:34px}.dress-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.dress-group{background:rgba(123,30,43,.045);border:1px solid var(--border);border-radius:18px;padding:18px}.dress-group h3{font:800 16px "Plus Jakarta Sans";margin-bottom:12px}.dress-group ul{list-style:none;display:grid;gap:10px}.dress-group li{display:flex;gap:9px;align-items:flex-start;font-size:14px}.dress-group li span{color:var(--green);font-weight:900}.timeline-list{position:relative;display:grid;gap:14px}.timeline-list:before{content:"";position:absolute;left:25px;top:24px;bottom:24px;width:3px;background:linear-gradient(var(--maroon),rgba(123,30,43,.18))}.timeline-item{position:relative;display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:start}.timeline-dot{position:relative;z-index:1;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--maroon);color:white;font-weight:800;border:5px solid var(--bg)}.timeline-card h3{font:800 17px "Plus Jakarta Sans";margin:5px 0 10px}.timeline-card p{color:var(--muted);margin:5px 0}.timeline-item.upcoming .timeline-dot{background:var(--yellow)}
+@media(max-width:760px){.dress-grid{grid-template-columns:1fr}.dress-card,.timeline-card{padding:17px}.timeline-item{grid-template-columns:46px 1fr}.timeline-dot{width:46px;height:46px}.timeline-list:before{left:22px}.info-tabs{overflow-x:auto}.info-tabs .tab{min-width:105px}}
+
+
+/* Home quick menu — rapi dan seimbang */
+.quick-menu-wrap{margin-top:20px}
+.quick-menu-heading{display:flex;align-items:end;justify-content:space-between;margin:0 2px 12px}
+.quick-menu-heading h2{margin:3px 0 0;font:800 20px "Plus Jakarta Sans",Arial,sans-serif;color:var(--text)}
+.quick-menu-hint{font-size:11px;font-weight:800;color:var(--muted);background:rgba(122,32,48,.07);padding:7px 10px;border-radius:999px}
+.quick-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.quick-actions .quick-card{min-width:0;display:grid;grid-template-columns:42px minmax(0,1fr) 18px;align-items:center;gap:10px;padding:13px 12px;text-decoration:none}
+.quick-actions .quick-card>span{width:42px;height:42px;display:grid;place-items:center;flex:0 0 auto}
+.quick-actions .quick-card div{min-width:0}
+.quick-actions .quick-card strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.quick-actions .quick-card small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.quick-actions .quick-card b{font-size:17px;line-height:1;color:var(--muted);font-weight:700}
+.quick-card-wide{grid-column:1 / -1!important;padding:14px 16px!important}
+.quick-card-wide>span{width:44px!important;height:44px!important}
+@media(max-width:520px){
+  .quick-menu-heading h2{font-size:18px}
+  .quick-actions{gap:8px}
+  .quick-actions .quick-card{grid-template-columns:34px minmax(0,1fr) 12px;gap:7px;padding:10px 8px;border-radius:15px}
+  .quick-actions .quick-card>span{width:34px;height:34px;border-radius:10px}
+  .quick-actions .quick-card strong{font-size:10.5px}
+  .quick-actions .quick-card small{font-size:8px}
+  .quick-actions .quick-card b{font-size:13px}
+  .quick-card-wide{padding:11px 12px!important}
+}
+
+
+/* ===== DRESSCODE & TIMELINE HEADER ALIGNMENT ===== */
+body[data-page="dresscode"] header,
+body[data-page="timeline"] header{
+  padding:16px 20px 18px !important;
+  min-height:0 !important;
+  overflow:visible !important;
+}
+body[data-page="dresscode"] .header-inner,
+body[data-page="timeline"] .header-inner{
+  min-height:54px !important;
+  padding:0 !important;
+  position:relative !important;
+  justify-content:flex-start !important;
+}
+body[data-page="dresscode"] .back-home,
+body[data-page="timeline"] .back-home{
+  position:static !important;
+  margin-right:14px !important;
+  flex:none !important;
+  color:inherit !important;
+  background:rgba(114,32,49,.08) !important;
+  border:1px solid rgba(114,32,49,.12) !important;
+}
+body.dark[data-page="dresscode"] .back-home,
+body.dark[data-page="timeline"] .back-home{
+  background:rgba(255,255,255,.08) !important;
+  border-color:rgba(255,255,255,.12) !important;
+}
+body[data-page="dresscode"] .container,
+body[data-page="timeline"] .container{
+  width:min(1050px,92%) !important;
+  margin:24px auto 52px !important;
+  position:relative !important;
+  z-index:2 !important;
+}
+body[data-page="dresscode"] .page-hero,
+body[data-page="timeline"] .page-hero{
+  margin:0 !important;
+  padding:0 2px 22px !important;
+  text-align:left !important;
+}
+body[data-page="dresscode"] .page-hero h2,
+body[data-page="timeline"] .page-hero h2{
+  margin-top:6px !important;
+}
+@media(max-width:600px){
+  body[data-page="dresscode"] header,
+  body[data-page="timeline"] header{padding:10px 14px 12px !important}
+  body[data-page="dresscode"] .header-inner,
+  body[data-page="timeline"] .header-inner{min-height:48px !important}
+  body[data-page="dresscode"] .back-home,
+  body[data-page="timeline"] .back-home{
+    width:40px !important;height:40px !important;padding:0 !important;
+    justify-content:center !important;margin-right:10px !important;font-size:0 !important
+  }
+  body[data-page="dresscode"] .back-home span,
+  body[data-page="timeline"] .back-home span{display:none !important}
+  body[data-page="dresscode"] .back-home svg,
+  body[data-page="timeline"] .back-home svg{width:20px !important;height:20px !important}
+  body[data-page="dresscode"] .brand,
+  body[data-page="timeline"] .brand{padding-right:0 !important}
+  body[data-page="dresscode"] .container,
+  body[data-page="timeline"] .container{width:calc(100% - 28px) !important;margin:18px auto 38px !important}
+}
+
+/* FINAL: tombol kembali di sisi kanan — Dresscode & Timeline */
+body[data-page="dresscode"] .header-inner,
+body[data-page="timeline"] .header-inner{display:flex!important;align-items:center!important;position:relative!important;}
+body[data-page="dresscode"] .brand,
+body[data-page="timeline"] .brand{padding-right:64px!important;}
+body[data-page="dresscode"] .back-home,
+body[data-page="timeline"] .back-home{position:absolute!important;right:0!important;left:auto!important;top:50%!important;transform:translateY(-50%)!important;margin:0!important;width:42px!important;height:42px!important;padding:0!important;display:grid!important;place-items:center!important;border-radius:13px!important;background:rgba(255,255,255,.13)!important;border:1px solid rgba(255,255,255,.2)!important;color:#fff!important;}
+body[data-page="dresscode"] .back-home:hover,
+body[data-page="timeline"] .back-home:hover{transform:translateY(-50%) scale(1.04)!important;background:rgba(255,255,255,.2)!important;}
+body[data-page="dresscode"] .back-home span,
+body[data-page="timeline"] .back-home span{display:none!important;}
+body[data-page="dresscode"] .back-home svg,
+body[data-page="timeline"] .back-home svg{width:22px!important;height:22px!important;fill:none!important;stroke:currentColor!important;stroke-width:2.4!important;}
+.dress-head p{margin:7px 0 0;color:var(--muted);font-size:13px;line-height:1.5}.dress-group-title{display:flex;align-items:center;gap:9px;margin-bottom:14px}.dress-group-title h3{margin:0}.dress-person{width:34px;height:34px;display:grid;place-items:center;border-radius:11px;background:rgba(114,32,49,.08);font-size:18px}.dress-group li{line-height:1.45;padding-bottom:8px;border-bottom:1px solid rgba(114,32,49,.07)}.dress-group li:last-child{border-bottom:0;padding-bottom:0}.dress-group li .check{flex:0 0 20px;width:20px;height:20px;display:grid;place-items:center;border-radius:50%;background:rgba(36,132,87,.12);font-size:12px}.dress-head{align-items:flex-start}.dress-badge{width:52px;height:52px;display:grid;place-items:center;background:rgba(114,32,49,.08);border-radius:16px;font-size:26px}@media(max-width:600px){body[data-page="dresscode"] .back-home,body[data-page="timeline"] .back-home{right:0!important;top:50%!important;width:40px!important;height:40px!important}.dress-head{gap:12px}.dress-head h2{font-size:17px}.dress-badge{width:46px;height:46px;font-size:23px;flex:0 0 46px}}
+
+/* Dresscode is informational only — no interactive checklist styling */
+.dress-group li .info-bullet{flex:0 0 20px;width:20px;height:20px;display:grid;place-items:center;color:var(--maroon);font-size:22px;font-weight:900;line-height:1;}
+.dress-group li{cursor:default;}
+
+
+/* Dresscode card enhancement */
+.dress-group-title{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.dress-group-title>div{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.dress-group h3{margin-bottom:0}
+.dress-required{font-size:9px;font-weight:800;letter-spacing:.08em;padding:4px 7px;border-radius:999px;background:rgba(114,32,49,.10);color:var(--maroon)}
+.dress-group li .info-bullet{flex:0 0 22px;width:22px;height:22px;display:grid;place-items:center;border-radius:7px;background:rgba(114,32,49,.09);font-size:10px;color:var(--maroon)!important}
+
+
+/* Versi Aplikasi / PWA */
+.app-version-card{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin:20px auto;
+  padding:16px;
+  max-width:900px;
+  border:1px solid rgba(114,32,49,.12);
+  border-radius:18px;
+  background:rgba(255,255,255,.86);
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+}
+.app-version-icon{
+  width:48px;
+  height:48px;
+  flex:0 0 48px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  background:rgba(114,32,49,.09);
+  color:var(--maroon);
+}
+.app-version-icon svg{width:25px;height:25px}
+.app-version-content{flex:1;min-width:0}
+.app-version-label{
+  margin-bottom:3px;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.1em;
+  color:var(--maroon);
+}
+.app-version-content h3{margin:0 0 3px;font-size:16px}
+.app-version-content p{margin:0;font-size:12px;opacity:.7}
+.app-install-btn{
+  border:0;
+  border-radius:12px;
+  padding:10px 15px;
+  font:inherit;
+  font-size:12px;
+  font-weight:800;
+  cursor:pointer;
+  background:var(--maroon);
+  color:#fff;
+}
+.app-install-btn[hidden]{display:none}
+@media(max-width:520px){
+  .app-version-card{margin:16px 12px;padding:14px;gap:11px}
+  .app-version-icon{width:42px;height:42px;flex-basis:42px;border-radius:12px}
+  .app-version-icon svg{width:22px;height:22px}
+  .app-version-content h3{font-size:14px}
+  .app-version-content p{font-size:11px}
+  .app-install-btn{padding:9px 12px}
+}
